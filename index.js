@@ -90,6 +90,9 @@ module.exports.Remote = function(ipAddr) {
         if (typeof type !== 'undefined') {
             options.path = buildQueryString(options.path, { type: type });
         }
+        else
+            options.path = buildQueryString(options.path);
+        }
 
         makeRequest(options, callbackHandler(callback));
     };
